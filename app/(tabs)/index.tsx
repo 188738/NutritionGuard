@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, Button, ScrollView } from 'react-native';
 import { Text, View } from '@/components/Themed';
+import { useRouter } from 'expo-router';  // Import the useRouter hook
 import { Picker } from '@react-native-picker/picker';
 import EditScreenInfo from '@/components/EditScreenInfo';
 
 export default function TabOneScreen() {
+  const router= useRouter();
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [weight, setWeight] = useState('');
@@ -23,6 +25,8 @@ export default function TabOneScreen() {
     });
 
     alert('Form submitted!');
+    router.push('/three');
+
   };
 
   return (
